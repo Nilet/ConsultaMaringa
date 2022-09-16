@@ -30,7 +30,7 @@ public class Consultas extends javax.swing.JFrame {
     private void initComponents() {
 
         Base = new javax.swing.JPanel();
-        Apresentacao = new RoundedPanel(10, lightGray);
+        Apresentacao = new RoundedPanel(10, white);
         jLabel1 = new javax.swing.JLabel();
         lblAgendar = new RoundedPanel(10, lightGray);
         btnAgendar = new javax.swing.JButton();

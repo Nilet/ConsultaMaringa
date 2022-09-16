@@ -2,7 +2,11 @@ package Telas;
 
 
 import com.github.lgooddatepicker.components.DatePickerSettings;
+import com.github.lgooddatepicker.components.TimePickerSettings;
+import com.github.lgooddatepicker.optionalusertools.PickerUtilities;
+import com.github.lgooddatepicker.optionalusertools.TimeVetoPolicy;
 import static java.awt.Color.*;
+import java.time.LocalTime;
 import javax.swing.JOptionPane;
 
 /*
@@ -14,6 +18,15 @@ import javax.swing.JOptionPane;
  *
  * @author blz
  */
+class HorariosPermitidos implements TimeVetoPolicy {
+
+    @Override
+    public boolean isTimeAllowed(LocalTime time) {
+      return PickerUtilities.isLocalTimeInRange(
+          time, LocalTime.of(8, 00), LocalTime.of(18, 00), true);
+    }
+  }
+
 public class Agendas extends javax.swing.JFrame {
 
     /**
@@ -44,7 +57,8 @@ public class Agendas extends javax.swing.JFrame {
         lblDate = new javax.swing.JLabel();
         dataAgendamento = new com.github.lgooddatepicker.components.DatePicker();
         lblHorarios = new javax.swing.JLabel();
-        horaAgendamento = new com.github.lgooddatepicker.components.TimePicker();
+        TimePickerSettings timeSettings = new TimePickerSettings();
+        horaAgendamento = new com.github.lgooddatepicker.components.TimePicker(timeSettings);
         lblPaciente = new javax.swing.JLabel();
         cbPaciente = new javax.swing.JComboBox<>();
         checkBoxTermos = new javax.swing.JCheckBox();
@@ -108,6 +122,8 @@ public class Agendas extends javax.swing.JFrame {
         lblHorarios.setFont(new java.awt.Font("Helvetica", 0, 16)); // NOI18N
         lblHorarios.setText("Horário *");
 
+        timeSettings.setVetoPolicy(new HorariosPermitidos());
+
         lblPaciente.setFont(new java.awt.Font("Helvetica", 0, 16)); // NOI18N
         lblPaciente.setText("Paciente");
 
@@ -152,7 +168,7 @@ public class Agendas extends javax.swing.JFrame {
                         .addComponent(checkBoxTermos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblTermos, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -84,7 +84,7 @@
                           <Component id="lblTermos" min="-2" pref="231" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="47" max="32767" attributes="0"/>
+                  <EmptySpace pref="48" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -246,6 +246,11 @@
           </Properties>
         </Component>
         <Component class="com.github.lgooddatepicker.components.TimePicker" name="horaAgendamento">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.github.lgooddatepicker.components.TimePicker(timeSettings)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="TimePickerSettings timeSettings = new TimePickerSettings();"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="timeSettings.setVetoPolicy(new HorariosPermitidos());"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="lblPaciente">
           <Properties>
