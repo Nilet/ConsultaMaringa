@@ -123,6 +123,7 @@ public class Agendas extends javax.swing.JFrame {
         lblHorarios.setText("Horário *");
 
         timeSettings.setVetoPolicy(new HorariosPermitidos());
+        timeSettings.use24HourClockFormat();
 
         lblPaciente.setFont(new java.awt.Font("Helvetica", 0, 16)); // NOI18N
         lblPaciente.setText("Paciente");

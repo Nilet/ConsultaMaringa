@@ -249,7 +249,7 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.github.lgooddatepicker.components.TimePicker(timeSettings)"/>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="TimePickerSettings timeSettings = new TimePickerSettings();"/>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="timeSettings.setVetoPolicy(new HorariosPermitidos());"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="timeSettings.setVetoPolicy(new HorariosPermitidos());&#xa;timeSettings.use24HourClockFormat();"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="lblPaciente">
