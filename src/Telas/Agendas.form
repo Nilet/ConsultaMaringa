@@ -139,7 +139,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new RoundedPanel(10, lightGray)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new RoundedPanel(10, white)"/>
           </AuxValues>
 
           <Layout>
@@ -286,7 +286,7 @@
         <Component class="javax.swing.JLabel" name="lblTermos">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica" size="13" style="0"/>
+              <Font name="Helvetica" size="11" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p&gt;Estou ciente de que ao agendar uma consulta eu me comprometo a comparecer a ela na data escolhida e que o reagendamento ou cancelamento deve ser realizado at&#xe9; 48h antes da data da consulta.&lt;/p&gt;&lt;/html&gt;"/>
           </Properties>

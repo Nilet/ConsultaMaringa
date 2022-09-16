@@ -35,7 +35,7 @@ public class Agendas extends javax.swing.JFrame {
         datePickerSettings1 = new com.github.lgooddatepicker.components.DatePickerSettings();
         datePickerSettings2 = new com.github.lgooddatepicker.components.DatePickerSettings();
         jPanel1 = new javax.swing.JPanel();
-        Apresentacao = new RoundedPanel(10, lightGray);
+        Apresentacao = new RoundedPanel(10, white);
         jLabel1 = new javax.swing.JLabel();
         lblEspecialidade = new javax.swing.JLabel();
         cbEspecialidade = new javax.swing.JComboBox<>();
@@ -126,7 +126,7 @@ public class Agendas extends javax.swing.JFrame {
             }
         });
 
-        lblTermos.setFont(new java.awt.Font("Helvetica", 0, 13)); // NOI18N
+        lblTermos.setFont(new java.awt.Font("Helvetica", 0, 11)); // NOI18N
         lblTermos.setText("<html><p>Estou ciente de que ao agendar uma consulta eu me comprometo a comparecer a ela na data escolhida e que o reagendamento ou cancelamento deve ser realizado até 48h antes da data da consulta.</p></html>");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
