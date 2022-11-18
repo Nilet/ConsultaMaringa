@@ -62,4 +62,13 @@ public class ConsultaDTO {
         ConsultaDAO objconsultadao = new ConsultaDAO();
         objconsultadao.inserirConsulta(this);
     }
+    
+    public String getDataHora(){
+        String retorno = "";
+        retorno += getDataAgenda();
+        retorno += " ";
+        retorno += getHoraAgenda();
+        
+        return retorno;
+    }
 }

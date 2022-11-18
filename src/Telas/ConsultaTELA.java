@@ -223,10 +223,6 @@ public class ConsultaTELA extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         boolean erro = false;
         String retorno = "";
-        if(cbPaciente.getSelectedIndex() == 0){
-            retorno += "\nSelecione um paciente!";
-            erro = true;
-        }
         if(cbEspecialidade.getSelectedIndex() == 0){
             retorno += "\nSelecione uma especialidade!";
             erro = true;

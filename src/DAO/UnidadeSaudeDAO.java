@@ -15,44 +15,27 @@ import java.util.ArrayList;
  *
  * @author mathe
  */
-public class PacienteDAO {
+public class UnidadeSaudeDAO {
 
     Connection conn;
     PreparedStatement pstm;
     ResultSet rs;
 
-    public ArrayList<String> listarPacientes() {
-        ArrayList<String> lista = new ArrayList<>();
-        conn = new ConexaoDAO().conectaBD();
-        String sql = "SELECT NOME FROM PACIENTE";
 
-        try {
-            pstm = conn.prepareStatement(sql);
-            rs = pstm.executeQuery();
-
-            while (rs.next()) {
-                lista.add(rs.getString("Nome"));
-            }
-        } catch (SQLException e) {
-            System.out.println("PacienteDAO " + e.getMessage());
-        }
-        return lista;
-
-    }
     
-        public String getCnsPorNome(String pacienteNome) {
+        public String getIdUbsPorNome(String ubsNome) {
         conn = new ConexaoDAO().conectaBD();
 
-        String sql = "SELECT CNS FROM PACIENTE WHERE Nome = ?";
+        String sql = "SELECT idUbs FROM UNIDADESAUDE WHERE Nome = ?";
         try {
             pstm = conn.prepareStatement(sql);
-            pstm.setString(1, pacienteNome);
+            pstm.setString(1, ubsNome);
 
             rs = pstm.executeQuery();
             String retorno = "";
             
             while(rs.next()){
-            retorno = rs.getString("CNS");
+            retorno = String.valueOf(rs.getInt("idUbs"));
         }
 
             return retorno;
