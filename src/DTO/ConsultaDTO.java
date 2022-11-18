@@ -17,6 +17,14 @@ public class ConsultaDTO {
     private String horaAgenda;
     private String unidadeDeSaude;
     private String paciente;
+    private String dataHora;
+
+    public void setDataHora(String dataHora) {
+        this.dataHora = dataHora;
+    }
+    public String getDataHoraBD(){
+        return this.dataHora;
+    }
 
     public String getEspecialidade() {
         return especialidade;

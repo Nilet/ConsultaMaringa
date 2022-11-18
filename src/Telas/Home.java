@@ -213,7 +213,16 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgendarActionPerformed
 
     private void btnVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarActionPerformed
-        JOptionPane.showMessageDialog(null,"Em construção!");
+        
+        try {
+            ListarConsultas visualizarTela = new ListarConsultas();
+            this.dispose();
+            visualizarTela.setVisible(true);
+        } catch (Exception e) {
+            ListarConsultas visualizarTela = new ListarConsultas();
+            this.dispose();
+            visualizarTela.setVisible(true);
+        }
     }//GEN-LAST:event_btnVisualizarActionPerformed
 
     private void btnReagendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReagendarActionPerformed
