@@ -5,6 +5,7 @@
  */
 package DAO;
 
+import DTO.PacienteDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -62,4 +63,22 @@ public class PacienteDAO {
         }
 
     }
+        
+        public boolean autenticacaoUsuario(PacienteDTO objpacientedto){
+            conn = new ConexaoDAO().conectaBD();
+            
+            try {
+                String sql = "SELECT * FROM PACIENTE WHERE CNS = ? AND CPF = ?";
+                pstm = conn.prepareStatement(sql);
+                pstm.setString(1, objpacientedto.getCns());
+                pstm.setString(2, objpacientedto.getCpf());
+                
+                rs = pstm.executeQuery();
+                return rs.next();
+                
+            } catch (SQLException e) {
+                return false;
+            }
+        }
+                
 }

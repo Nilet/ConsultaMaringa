@@ -21,9 +21,7 @@ public class UnidadeSaudeDAO {
     PreparedStatement pstm;
     ResultSet rs;
 
-
-    
-        public String getIdUbsPorNome(String ubsNome) {
+    public String getIdUbsPorNome(String ubsNome) {
         conn = new ConexaoDAO().conectaBD();
 
         String sql = "SELECT idUbs FROM UNIDADESAUDE WHERE Nome = ?";
@@ -33,10 +31,10 @@ public class UnidadeSaudeDAO {
 
             rs = pstm.executeQuery();
             String retorno = "";
-            
-            while(rs.next()){
-            retorno = String.valueOf(rs.getInt("idUbs"));
-        }
+
+            while (rs.next()) {
+                retorno = String.valueOf(rs.getInt("idUbs"));
+            }
 
             return retorno;
         } catch (SQLException e) {
@@ -45,4 +43,24 @@ public class UnidadeSaudeDAO {
         }
 
     }
+
+    public ArrayList<String> listarUnidades () {
+        ArrayList<String> lista = new ArrayList<>();
+        conn = new ConexaoDAO().conectaBD();
+        String sql = "SELECT NOME FROM UNIDADESAUDE";
+
+        try {
+            pstm = conn.prepareStatement(sql);
+            rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                lista.add(rs.getString("NOME"));
+            }
+        } catch (SQLException e) {
+            System.out.println("UnidadeSaudeDAO " + e.getMessage());
+        }
+        return lista;
+
+    }
+
 }

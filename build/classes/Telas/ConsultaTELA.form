@@ -169,17 +169,12 @@
         </Component>
         <Component class="javax.swing.JComboBox" name="cbEspecialidade">
           <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
-                <StringItem index="0" value="Selecione uma especialidade"/>
-                <StringItem index="1" value="Pediatria"/>
-                <StringItem index="2" value="Otorrinolaringologia"/>
-                <StringItem index="3" value="Psiquiatria"/>
-                <StringItem index="4" value="Cardiologia"/>
-              </StringArray>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="(new javax.swing.DefaultComboBoxModel&lt;&gt;(objmedicodto.getListaEspecialidades()))" type="code"/>
             </Property>
           </Properties>
           <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="MedicoDTO objmedicodto = new MedicoDTO();"/>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
@@ -193,17 +188,12 @@
         </Component>
         <Component class="javax.swing.JComboBox" name="cbUnidade">
           <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
-                <StringItem index="0" value="Selecione uma UBS"/>
-                <StringItem index="1" value="UBS Aclima&#xe7;&#xe3;o"/>
-                <StringItem index="2" value="UBS Grev&#xed;leas"/>
-                <StringItem index="3" value="UBS Morangueira"/>
-                <StringItem index="4" value="UBS Tuiuti"/>
-              </StringArray>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="(new javax.swing.DefaultComboBoxModel&lt;&gt;(objubsdto.getListaUnidades()))" type="code"/>
             </Property>
           </Properties>
           <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="UnidadeSaudeDTO objubsdto = new UnidadeSaudeDTO();&#xd;&#xa;"/>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
@@ -248,7 +238,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbPacienteActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="System.out.println(objpacientedto.getListaNome());"/>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="PacienteDTO objpacientedto = new PacienteDTO();"/>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>

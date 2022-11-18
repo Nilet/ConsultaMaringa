@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,19 +21,23 @@ public class MedicoDAO {
     PreparedStatement pstm;
     ResultSet rs;
 
-    public ResultSet getEspecialidades() {
+    public ArrayList<String> listarEspecialidades() {
+        ArrayList<String> lista = new ArrayList<>();
         conn = new ConexaoDAO().conectaBD();
+        String sql = "SELECT ESPECIALIDADE FROM MEDICOS GROUP BY ESPECIALIDADE";
 
         try {
-            String sql = "SELECT ESPECIALIDADE FROM MEDICOS GROUP BY ESPECIALIDADE";
-
             pstm = conn.prepareStatement(sql);
             rs = pstm.executeQuery();
-            return rs;
+
+            while (rs.next()) {
+                lista.add(rs.getString("ESPECIALIDADE"));
+            }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            return null;
+            System.out.println("MedicoDAO " + e.getMessage());
         }
+        return lista;
+
     }
 
     public String getCrmPorEspecialidade(String especialidade) {

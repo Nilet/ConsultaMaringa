@@ -2,8 +2,9 @@ package Telas;
 
 
 import DTO.ConsultaDTO;
+import DTO.MedicoDTO;
 import DTO.PacienteDTO;
-import Telas.Components.lgooddatepicker.components.DatePickerSettings;
+import DTO.UnidadeSaudeDTO;
 import Telas.Components.lgooddatepicker.components.TimePickerSettings;
 import Telas.Components.lgooddatepicker.optionalusertools.PickerUtilities;
 import Telas.Components.lgooddatepicker.optionalusertools.TimeVetoPolicy;
@@ -50,8 +51,10 @@ public class ConsultaTELA extends javax.swing.JFrame {
         Apresentacao = new RoundedPanel(10, white);
         jLabel1 = new javax.swing.JLabel();
         lblEspecialidade = new javax.swing.JLabel();
+        MedicoDTO objmedicodto = new MedicoDTO();
         cbEspecialidade = new javax.swing.JComboBox<>();
         lblUnidade = new javax.swing.JLabel();
+        UnidadeSaudeDTO objubsdto = new UnidadeSaudeDTO();
         cbUnidade = new javax.swing.JComboBox<>();
         lblDate = new javax.swing.JLabel();
         lblHorarios = new javax.swing.JLabel();
@@ -60,7 +63,6 @@ public class ConsultaTELA extends javax.swing.JFrame {
         lblPaciente = new javax.swing.JLabel();
         PacienteDTO objpacientedto = new PacienteDTO();
         cbPaciente = new javax.swing.JComboBox<>();
-        System.out.println(objpacientedto.getListaNome());
         checkBoxTermos = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
         lblTermos = new javax.swing.JLabel();
@@ -97,12 +99,12 @@ public class ConsultaTELA extends javax.swing.JFrame {
         lblEspecialidade.setText("Especialidade *");
         lblEspecialidade.setFont(new java.awt.Font("Helvetica", 0, 16)); // NOI18N
 
-        cbEspecialidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione uma especialidade", "Pediatria", "Otorrinolaringologia", "Psiquiatria", "Cardiologia" }));
+        cbEspecialidade.setModel((new javax.swing.DefaultComboBoxModel<>(objmedicodto.getListaEspecialidades())));
 
         lblUnidade.setText("Unidade de Saúde *");
         lblUnidade.setFont(new java.awt.Font("Helvetica", 0, 16)); // NOI18N
 
-        cbUnidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione uma UBS", "UBS Aclimação", "UBS Grevíleas", "UBS Morangueira", "UBS Tuiuti" }));
+        cbUnidade.setModel((new javax.swing.DefaultComboBoxModel<>(objubsdto.getListaUnidades())));
 
         lblDate.setText("Data *");
         lblDate.setFont(new java.awt.Font("Helvetica", 0, 16)); // NOI18N
@@ -223,14 +225,14 @@ public class ConsultaTELA extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         boolean erro = false;
         String retorno = "";
-        if(cbEspecialidade.getSelectedIndex() == 0){
-            retorno += "\nSelecione uma especialidade!";
-            erro = true;
-        }
-        if(cbUnidade.getSelectedIndex() == 0){
-            retorno += "\nSelecione uma unidade de saúde!";
-            erro = true;
-        }
+//        if(cbEspecialidade.getSelectedIndex() == 0){;
+//            retorno += "\nSelecione uma especialidade!";
+//            erro = true;
+//        }
+//        if(cbUnidade.getSelectedIndex() == 0){
+//            retorno += "\nSelecione uma unidade de saúde!";
+//            erro = true;
+//        }
         try{
             if(!(dataAgendamento.getDate().isAfter(java.time.LocalDate.now()) ||
                 dataAgendamento.getDate().equals(java.time.LocalDate.now()))){
